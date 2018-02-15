@@ -11,18 +11,21 @@ namespace SiS
         static void Main(string[] args)
         {
 
-            IPerson staff = new Staff("Jane", "Doe","CEO",1000000,DateTime.Parse("Jan 6, 2010"),null);
-            Staff vp = new Staff("John", "Doe", "VP", 500000, DateTime.Parse("Jan 25, 2013"), (Staff)staff);
+            IPerson CEO = new Staff("Jane", "Doe","CEO",1000000,DateTime.Parse("Jan 6, 2010"),null);
+            Staff vp = new Staff("John", "Doe", "VP", 500000, DateTime.Parse("Jan 25, 2013"), (Staff)CEO);
                 //new Student("John", "Doe", DateTime.Now);
-            Console.WriteLine("Name: " + staff.FirstName + " " + staff.LastName);
-            if(staff is Staff)
+            Console.WriteLine("Name: " + CEO.FirstName + " " + CEO.LastName);
+            Console.WriteLine("ID: " + CEO.ID.ID);
+            Console.WriteLine("Name: " + vp.FirstName + " " + vp.LastName);
+            Console.WriteLine("ID: " + vp.ID.ID);
+            if (CEO is Staff)
             {
-                Staff s = (Staff)staff;
+                Staff s = (Staff)CEO;
                 Console.WriteLine("Salary: $" + s.Salary);
             }
-            if (staff is Student)
+            if (CEO is Student)
             {
-                Student s = (Student)staff;
+                Student s = (Student)CEO;
                 Console.WriteLine(s.DateOfBirth);
             }
             Console.ReadLine();

@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//https://github.com/justinhuntgc/COMP1098.3
 namespace SiS
 {
     public class Staff : IPerson
     {
         public String FirstName { get; protected set; }
         public String LastName { get; protected set; }
+        public Identification ID { get; protected set; }
+
         public String Position { get; private set; }
         public Decimal Salary { get; private set; }
         public DateTime StartDate { get; private set; }
@@ -28,6 +30,7 @@ namespace SiS
             String position, Decimal salary,
             DateTime startDate, Staff manager)
         {
+            ID = new Identification(this);
             LastName = lastName;
             FirstName = firstName;
             Subordinates = new List<Staff>();

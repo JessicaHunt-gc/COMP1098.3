@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace SiS
 {
-    interface IPerson
+    public interface IPerson
     {
+        Identification ID { get; }
         String FirstName { get; }
         String LastName { get; }
     }

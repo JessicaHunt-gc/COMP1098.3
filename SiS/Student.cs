@@ -10,12 +10,14 @@ namespace SiS
     {
         public String FirstName { get; protected set; }
         public String LastName { get; protected set; }
+        public Identification ID { get; protected set; }
         public DateTime DateOfBirth { get; private set; }
 
         
         public Student(String FirstName, String LastName,
             DateTime dateOfBirth)
         {
+            ID = new Identification(this);
             this.FirstName = FirstName;
             this.LastName = LastName;
             DateOfBirth = dateOfBirth;

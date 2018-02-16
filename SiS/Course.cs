@@ -14,6 +14,8 @@ namespace SiS
         public int Capacity { get; private set; }
 
         public List<CollegeProgram> Programs { get; private set; }
+        public List<Student> students { get; private set; }
+        public List<Staff> instructors { get; private set; }
 
         public Course(String name,String subject,String number,int capacity,CollegeProgram primaryProgram)
         {
@@ -24,6 +26,17 @@ namespace SiS
             Programs = new List<CollegeProgram>();
             Programs.Add(primaryProgram);
             primaryProgram.addCourse(this);
+
+            students = new List<Student>();
+            instructors = new List<Staff>();
+        }
+
+        public bool registerStudent(Student s)
+        {
+            if (students.Count >= Capacity)
+                return false;
+            students.Add(s);
+            return true;
         }
     }
 }

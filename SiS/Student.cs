@@ -13,7 +13,7 @@ namespace SiS
         public Identification ID { get; protected set; }
         public DateTime DateOfBirth { get; private set; }
 
-        
+        public List<CollegeProgram> Programs { get; private set; }
         public Student(String FirstName, String LastName,
             DateTime dateOfBirth)
         {

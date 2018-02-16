@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CollegeProgram.cs" />
+    <Compile Include="Course.cs" />
     <Compile Include="Identification.cs" />
     <Compile Include="IPerson.cs" />
     <Compile Include="Program.cs" />

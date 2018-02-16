@@ -10,6 +10,10 @@ namespace SiS
     {
         static void Main(string[] args)
         {
+            CollegeProgram cp = new CollegeProgram("Computer Programmer", CollegeProgram.CollegeCredentials.Diploma, 3);
+            CollegeProgram paralegal = new CollegeProgram("Paralegal", CollegeProgram.CollegeCredentials.Certificate, 1);
+
+
 
             IPerson CEO = new Staff("Jane", "Doe","CEO",1000000,DateTime.Parse("Jan 6, 2010"),null);
             Staff vp = new Staff("John", "Doe", "VP", 500000, DateTime.Parse("Jan 25, 2013"), (Staff)CEO);

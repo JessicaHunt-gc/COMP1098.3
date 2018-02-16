@@ -14,6 +14,7 @@ namespace SiS
         public DateTime DateOfBirth { get; private set; }
 
         public List<CollegeProgram> Programs { get; private set; }
+        public List<Address> Addresses { get; private set; }
         public Student(String FirstName, String LastName,
             DateTime dateOfBirth)
         {

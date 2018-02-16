@@ -11,5 +11,7 @@ namespace SiS
         Identification ID { get; }
         String FirstName { get; }
         String LastName { get; }
+        List<Address> Addresses { get; }
+
     }
 }

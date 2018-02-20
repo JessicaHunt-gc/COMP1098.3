@@ -19,11 +19,19 @@ namespace SiS
         public Staff Manager { get; private set; }
         public List<Staff> Subordinates { get; private set; }
         public List<Address> Addresses { get; private set; }
+
+        public List<Course> Courses { get; private set; }
+
         public void addSubordinate (Staff subordinate)
         {
             if (Subordinates != null &&
                 subordinate != null)
                 Subordinates.Add(subordinate);
+        }
+        
+        public void addCourse(Course c)
+        {
+            Courses.Add(c);
         }
 
         public Staff(String firstName,String lastName,

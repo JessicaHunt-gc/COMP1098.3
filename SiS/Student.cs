@@ -15,6 +15,16 @@ namespace SiS
 
         public List<CollegeProgram> Programs { get; private set; }
         public List<Address> Addresses { get; private set; }
+
+        public List<Course> Courses { get; private set; }
+
+        public void addCourse(Course c)
+        {            
+            Courses.Add(c);                        
+        }
+
+
+
         public Student(String FirstName, String LastName,
             DateTime dateOfBirth)
         {

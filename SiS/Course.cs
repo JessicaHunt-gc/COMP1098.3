@@ -38,5 +38,12 @@ namespace SiS
             students.Add(s);
             return true;
         }
+
+        public bool registerInstructor(Staff i)
+        {
+            instructors.Add(i);
+            i.addCourse(this);
+            return true;
+        }
     }
 }

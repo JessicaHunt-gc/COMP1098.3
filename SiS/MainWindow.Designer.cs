@@ -29,12 +29,15 @@
         private void InitializeComponent()
         {
             this.CreateStudent = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.StudentGridView = new System.Windows.Forms.DataGridView();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.StudentGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // CreateStudent
             // 
-            this.CreateStudent.Location = new System.Drawing.Point(13, 99);
+            this.CreateStudent.Location = new System.Drawing.Point(453, 434);
             this.CreateStudent.Name = "CreateStudent";
             this.CreateStudent.Size = new System.Drawing.Size(75, 23);
             this.CreateStudent.TabIndex = 0;
@@ -42,32 +45,48 @@
             this.CreateStudent.UseVisualStyleBackColor = true;
             this.CreateStudent.Click += new System.EventHandler(this.CreateStudent_Click);
             // 
-            // label1
+            // StudentGridView
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.StudentGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.StudentGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FirstName,
+            this.LastName});
+            this.StudentGridView.Location = new System.Drawing.Point(13, 13);
+            this.StudentGridView.Name = "StudentGridView";
+            this.StudentGridView.Size = new System.Drawing.Size(515, 95);
+            this.StudentGridView.TabIndex = 1;
+            // 
+            // FirstName
+            // 
+            this.FirstName.HeaderText = "First Name";
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
+            // 
+            // LastName
+            // 
+            this.LastName.HeaderText = "Last Name";
+            this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(540, 469);
+            this.Controls.Add(this.StudentGridView);
             this.Controls.Add(this.CreateStudent);
             this.Name = "MainWindow";
             this.Text = "Student System";
+            ((System.ComponentModel.ISupportInitialize)(this.StudentGridView)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button CreateStudent;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView StudentGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
     }
 }

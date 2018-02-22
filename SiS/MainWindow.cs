@@ -16,7 +16,9 @@ namespace SiS
         public MainWindow()
         {
             InitializeComponent();
+            
         }
+
 
         private void CreateStudent_Click(object sender, EventArgs e)
         {
@@ -27,8 +29,21 @@ namespace SiS
 
         private void CreateStudentForm_StudentCreated(object sender, Student e)
         {
-            if(e!=null)
+            if (e != null)
+            {
                 studentList.Add(e);
+                DataGridViewRow r = (DataGridViewRow)StudentGridView.Rows[0].Clone();
+
+                r.Cells[0].Value = e.FirstName;
+                r.Cells[1].Value = e.LastName;
+
+                StudentGridView.Rows.Add(r);
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

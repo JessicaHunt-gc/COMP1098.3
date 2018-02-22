@@ -17,9 +17,10 @@ namespace SiS
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void CreateStudent_Click(object sender, EventArgs e)
         {
-            label1.Text = "Hello World!";
+            CreateStudent createStudentForm = new CreateStudent();
+            createStudentForm.Show();
         }
     }
 }

@@ -12,6 +12,7 @@ namespace SiS
 {
     public partial class CreateStudent : Form
     {
+        public event EventHandler<Student> StudentCreated;
         public CreateStudent()
         {
             InitializeComponent();            
@@ -21,6 +22,8 @@ namespace SiS
         {
             DateTime dob = DateTime.Parse(DoB.Text);
             Student s = new Student(FirstName.Text, LastName.Text, dob);
+
+            StudentCreated?.Invoke(this, s);
         }
     }
 }

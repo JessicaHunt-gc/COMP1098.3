@@ -36,6 +36,7 @@
             this.lblDoB = new System.Windows.Forms.Label();
             this.Save = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // FirstName
@@ -75,7 +76,7 @@
             this.DoB.Location = new System.Drawing.Point(104, 67);
             this.DoB.Name = "DoB";
             this.DoB.Size = new System.Drawing.Size(200, 20);
-            this.DoB.TabIndex = 4;
+            this.DoB.TabIndex = 2;
             // 
             // lblDoB
             // 
@@ -91,7 +92,7 @@
             this.Save.Location = new System.Drawing.Point(228, 105);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(75, 23);
-            this.Save.TabIndex = 6;
+            this.Save.TabIndex = 3;
             this.Save.Text = "Save";
             this.Save.UseVisualStyleBackColor = true;
             this.Save.Click += new System.EventHandler(this.Save_Click);
@@ -101,15 +102,23 @@
             this.Cancel.Location = new System.Drawing.Point(13, 104);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(75, 23);
-            this.Cancel.TabIndex = 7;
+            this.Cancel.TabIndex = 4;
             this.Cancel.Text = "Cancel";
             this.Cancel.UseVisualStyleBackColor = true;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(13, 134);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(100, 23);
+            this.progressBar1.TabIndex = 6;
             // 
             // CreateStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 139);
+            this.ClientSize = new System.Drawing.Size(393, 322);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.lblDoB);
@@ -135,5 +144,6 @@
         private System.Windows.Forms.Label lblDoB;
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Button Cancel;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

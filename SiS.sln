@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiS", "SiS\SiS.csproj", "{F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiSData", "SiSData\SiSData.csproj", "{A23AA3DF-4520-4D01-859E-A873D6A57E7C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileIO-L5", "FileIO-L5\FileIO-L5.csproj", "{D6E161AA-1B09-42D6-BD19-C06056379C9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A23AA3DF-4520-4D01-859E-A873D6A57E7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A23AA3DF-4520-4D01-859E-A873D6A57E7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A23AA3DF-4520-4D01-859E-A873D6A57E7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6E161AA-1B09-42D6-BD19-C06056379C9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E161AA-1B09-42D6-BD19-C06056379C9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E161AA-1B09-42D6-BD19-C06056379C9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E161AA-1B09-42D6-BD19-C06056379C9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

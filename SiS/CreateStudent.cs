@@ -15,7 +15,14 @@ namespace SiS
         public event EventHandler<Student> StudentCreated;
         public CreateStudent()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            
+            this.Load += CreateStudent_Load;
+        }
+
+        private void CreateStudent_Load(object sender, EventArgs e)
+        {
+            //place code to run on loading of this form...
         }
 
         private void Save_Click(object sender, EventArgs e)
@@ -23,12 +30,6 @@ namespace SiS
             DateTime dob = DateTime.Parse(DoB.Text);
             Student s = new Student(FirstName.Text, LastName.Text, dob);
             
-            progressBar1.Maximum = 100;
-            for (int x = 0; x < 10; x++)
-            {
-                progressBar1.Increment(10);
-                Thread.Sleep(1000);
-            }
             StudentCreated?.Invoke(this, s);
         }
     }

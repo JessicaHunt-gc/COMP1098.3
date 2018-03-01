@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiS", "SiS\SiS.csproj", "{F43727E1-DD53-4240-BF39-2DE43D1E8E09}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiSData", "SiSData\SiSData.csproj", "{A23AA3DF-4520-4D01-859E-A873D6A57E7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F43727E1-DD53-4240-BF39-2DE43D1E8E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F43727E1-DD53-4240-BF39-2DE43D1E8E09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F43727E1-DD53-4240-BF39-2DE43D1E8E09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A23AA3DF-4520-4D01-859E-A873D6A57E7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A23AA3DF-4520-4D01-859E-A873D6A57E7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A23AA3DF-4520-4D01-859E-A873D6A57E7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A23AA3DF-4520-4D01-859E-A873D6A57E7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

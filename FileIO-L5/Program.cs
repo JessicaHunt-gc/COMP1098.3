@@ -25,7 +25,7 @@ namespace FileIO_L5
                 foreach (Student s in students)
                 {
                     //https://github.com/justinhuntgc/COMP1098.3
-                    String line = s.FirstName.Replace(",","") + "," + s.LastName.Replace(",", "") + "," +
+                    String line = "\"" + s.FirstName.Replace(",","") + "\"," + s.LastName.Replace(",", "") + "," +
                         s.DateOfBirth.ToShortDateString() + "," + s.ID.ID;
                     file.WriteLine(line);
                 }
@@ -68,6 +68,34 @@ namespace FileIO_L5
 
             Console.ReadLine();
 
+            DataModel m = new DataModel();
+            var ComputerProgrammer = new CollegeProgram("Computer Programmer", CollegeProgram.CollegeCredentials.Diploma, 3);
+            m.Programs.Add(ComputerProgrammer);
+            m.Programs.Add(new CollegeProgram("Paralegal", CollegeProgram.CollegeCredentials.Certificate, 1));
+
+
+
+            IPerson CEO = new Staff("Jane", "Doe", "CEO", 1000000, DateTime.Parse("Jan 6, 2010"), null);
+            Staff vp = new Staff("John", "Doe", "VP", 500000, DateTime.Parse("Jan 25, 2013"), (Staff)CEO);
+
+            m.People.Add(CEO);
+            m.People.Add(vp);
+
+
+            Course c = new Course("Intro to C#", "COMP", "1098", 35, ComputerProgrammer);
+            c.registerInstructor(vp);
+            Student s2 = new Student("Tim", "Cook", new DateTime(1960, 11, 01));
+            c.registerStudent(s2);
+
+            m.Courses.Add(c);
+            m.People.Add(s2);
+            s2 = new Student("Steve", "Jobs", new DateTime(1955, 02, 24));
+            c.registerStudent(s2);
+            m.People.Add(s2);
+
+            byte[] serializedData = DataModel.serialize<DataModel>(m);
+            File.WriteAllBytes("Output.dat", serializedData);
+            Console.ReadLine();
         }
     }
 }

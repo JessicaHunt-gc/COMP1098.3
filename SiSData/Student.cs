@@ -26,14 +26,21 @@ namespace SiS
         }
 
         public Student(String FirstName, String LastName,
-            DateTime dateOfBirth)
+            DateTime dateOfBirth, bool generateID = true)
         {
-            ID = new Identification(this);
+            if(generateID)
+                ID = new Identification(this);
             this.FirstName = FirstName;
             this.LastName = LastName;
             DateOfBirth = dateOfBirth;
             Courses = new List<Course>();
             Addresses = new List<Address>();
+        }
+
+        public Student(String FirstName, String LastName,
+            DateTime dateOfBirth,int ID) : this(FirstName,LastName,dateOfBirth,false)
+        {
+            this.ID = new Identification(ID, this);
         }
 
         #region Seriailizable implementation

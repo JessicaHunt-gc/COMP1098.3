@@ -19,6 +19,12 @@ namespace SiS
             ID = Identification.idKey++;
         }
 
+        public Identification(int ID, IPerson Person)
+        {
+            this.ID = ID;
+            this.Person = Person;
+        }
+
         #region Serialiazable implementation
         // Implement this method to serialize data. The method is called 
         // on serialization.

@@ -65,7 +65,7 @@ namespace SiS
 
         private void CreateStudent_Click(object sender, EventArgs e)
         {
-            CreateStudent createStudentForm = new CreateStudent();
+            CreateStudent createStudentForm = new CreateStudent(m);
             createStudentForm.StudentCreated += CreateStudentForm_PersonCreated;
             createStudentForm.Show();
         }
@@ -77,6 +77,7 @@ namespace SiS
                 m.People.Add(e);
                 ((Form)sender).Hide(); //Hide the form that triggered this event
                 UpdatePersonGridData(); //Update the data grid with the new person we created...
+                UpdateCourseGridData();
             }
         }
         private void UpdatePersonGridData()

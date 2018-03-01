@@ -38,6 +38,7 @@ namespace SiS
             if (students.Count >= Capacity)
                 return false;
             students.Add(s);
+            s.addCourse(this);
             return true;
         }
 

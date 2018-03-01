@@ -32,6 +32,8 @@ namespace SiS
             this.FirstName = FirstName;
             this.LastName = LastName;
             DateOfBirth = dateOfBirth;
+            Courses = new List<Course>();
+            Addresses = new List<Address>();
         }
 
         #region Seriailizable implementation

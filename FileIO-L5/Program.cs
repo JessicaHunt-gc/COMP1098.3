@@ -139,7 +139,7 @@ namespace FileIO_L5
             });
             Console.WriteLine(Json);
 
-            DataModel deserializedJson = JsonConvert.DeserializeObject<DataModel>(Json);
+            object o = JsonConvert.DeserializeObject(Json);
         }
     }
 }

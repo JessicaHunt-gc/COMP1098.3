@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
+using System.Xml.Serialization;
 using SiS;
 namespace FileIO_L5
 {
@@ -78,8 +81,8 @@ namespace FileIO_L5
             IPerson CEO = new Staff("Jane", "Doe", "CEO", 1000000, DateTime.Parse("Jan 6, 2010"), null);
             Staff vp = new Staff("John", "Doe", "VP", 500000, DateTime.Parse("Jan 25, 2013"), (Staff)CEO);
 
-            m.People.Add(CEO);
-            m.People.Add(vp);
+           // m.People.Add(CEO);
+           // m.People.Add(vp);
 
 
             Course c = new Course("Intro to C#", "COMP", "1098", 35, ComputerProgrammer);
@@ -96,6 +99,18 @@ namespace FileIO_L5
             byte[] serializedData = DataModel.serialize<DataModel>(m);
             File.WriteAllBytes("Output.dat", serializedData);
             Console.ReadLine();
+
+            //XmlSerializer xml = new XmlSerializer(typeof(DataModel));
+            //MemoryStream memStream = new MemoryStream();
+
+            //xml.Serialize(memStream, m);
+            //memStream.Seek(0, SeekOrigin.Begin);
+            //String xmlOut = memStream.ToString();
+
+            XDocument doc = new System.Xml.Linq.XDocument(
+                new XElement("SIS"));
+            
+
         }
     }
 }

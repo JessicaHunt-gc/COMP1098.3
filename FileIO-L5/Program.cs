@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
+using Newtonsoft.Json;
 using SiS;
 namespace FileIO_L5
 {
@@ -71,10 +72,10 @@ namespace FileIO_L5
 
           //  Console.ReadLine();
 
-            DataModel m = new DataModel();
+            DataModel dataModelTest = new DataModel();
             var ComputerProgrammer = new CollegeProgram("Computer Programmer", CollegeProgram.CollegeCredentials.Diploma, 3);
-            m.Programs.Add(ComputerProgrammer);
-            m.Programs.Add(new CollegeProgram("Paralegal", CollegeProgram.CollegeCredentials.Certificate, 1));
+            dataModelTest.Programs.Add(ComputerProgrammer);
+            dataModelTest.Programs.Add(new CollegeProgram("Paralegal", CollegeProgram.CollegeCredentials.Certificate, 1));
 
 
 
@@ -90,13 +91,13 @@ namespace FileIO_L5
             Student s2 = new Student("Tim", "Cook", new DateTime(1960, 11, 01));
             c.registerStudent(s2);
 
-            m.Courses.Add(c);
-            m.People.Add(s2);
+            dataModelTest.Courses.Add(c);
+            dataModelTest.People.Add(s2);
             s2 = new Student("Steve", "Jobs", new DateTime(1955, 02, 24));
             c.registerStudent(s2);
-            m.People.Add(s2);
+            dataModelTest.People.Add(s2);
 
-            byte[] serializedData = DataModel.serialize<DataModel>(m);
+            byte[] serializedData = DataModel.serialize<DataModel>(dataModelTest);
             File.WriteAllBytes("Output.dat", serializedData);
             // Console.ReadLine();
 
@@ -115,6 +116,30 @@ namespace FileIO_L5
                 new XElement("SIS",s2.createXMLTree()));
 
             doc.Save("Output.xml");
+
+            XmlDocument xmlIn = new XmlDocument();
+            xmlIn.Load("Output.xml");
+            XmlNode n = xmlIn.DocumentElement.FirstChild;
+            Console.WriteLine("FirstChild Name: " + n.Name);
+            n = n.FirstChild;
+            Console.WriteLine("FirstChild Name: " + n.Name);
+           // Console.WriteLine("FirstChild Name: " + n.InnerText);
+            XmlNodeList list = xmlIn.DocumentElement.SelectNodes("Student");
+            foreach(XmlNode node in list)
+            {
+                Console.WriteLine("FirstChild Name: " + node.FirstChild.InnerText);
+            }
+            Console.ReadLine();
+
+            String Json = JsonConvert.SerializeObject(dataModelTest, Newtonsoft.Json.Formatting.Indented, 
+                new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
+                PreserveReferencesHandling = PreserveReferencesHandling.All
+            });
+            Console.WriteLine(Json);
+
+            DataModel deserializedJson = JsonConvert.DeserializeObject<DataModel>(Json);
         }
     }
 }

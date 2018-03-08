@@ -140,6 +140,55 @@ namespace FileIO_L5
             Console.WriteLine(Json);
 
             object o = JsonConvert.DeserializeObject(Json);
+
+
+            Movie m = new Movie()
+            {
+                Name = "James bond",
+                lengthSec = 3800
+            };
+            Movie m2 = new Movie()
+            {
+                Name = "James bond2",
+                lengthSec = 3980
+            };
+            Movie m3 = new Movie()
+            {
+                Name = "James bond3",
+                lengthSec = 3300
+            };
+            Book b1 = new Book()
+            {
+                Name = "Book1",
+                Author = "Author1"
+            };
+            Book b2 = new Book()
+            {
+                Name = "Book2",
+                Author = "Author2"
+            };
+            Book b3 = new Book()
+            {
+                Name = "Book3",
+                Author = "Author3"
+            };
+            Library l = new Library()
+            {
+                Movies = new List<Movie>(),
+                Books = new List<Book>()
+            };
+            l.Movies.Add(m);
+            l.Movies.Add(m2);
+            l.Movies.Add(m3);
+            l.Books.Add(b1);
+            l.Books.Add(b2);
+            l.Books.Add(b3);
+
+            Json = JsonConvert.SerializeObject(l);
+
+            Library deserializedLib = JsonConvert.DeserializeObject<Library>(Json);
+
+
         }
     }
 }

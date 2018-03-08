@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FileIO_L5
 {
-    class Book
+    public class Book
     {
         public String Name;
         public String Author;

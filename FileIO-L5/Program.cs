@@ -108,7 +108,7 @@ namespace FileIO_L5
             //String xmlOut = memStream.ToString();
 
             XDocument doc = new XDocument(
-                new XElement("SIS"));
+                new XElement("SIS",s2.createXMLTree()));
 
             doc.Save("Output.xml");
         }

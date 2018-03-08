@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace SiS
 {
@@ -30,6 +31,19 @@ namespace SiS
             AddressType = addressType;
             Person = person;
             
+        }
+
+        public XElement createXMLTree()
+        {
+            XElement xml = new XElement("Address",
+                new XElement("Line1", Line1),
+                new XElement("Line2", Line2),
+                new XElement("City", City),
+                new XElement("Province", Province),
+                new XElement("Country", Country),
+                new XElement("AddressType",Enum.GetName(typeof(AddressTypes),AddressType))
+                );
+            return xml;
         }
 
         #region Serialiazable implementation

@@ -25,10 +25,18 @@ namespace SiS
         {            
             Courses.Add(c);                        
         }
-        //public XElement createXMLTree()
-        //{
 
-        //}
+        public XElement createXMLTree()
+        {
+            XElement xml = new XElement("Student",
+                new XElement("FirstName", FirstName),
+                new XElement("LastName", LastName),
+                new XElement("DateOfBirth", DateOfBirth.ToShortDateString()),
+                new XElement("ID", ID.ID)
+                );
+            return xml;
+        }
+
         public Student(String FirstName, String LastName,
             DateTime dateOfBirth, bool generateID = true)
         {

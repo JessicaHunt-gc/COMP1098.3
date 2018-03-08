@@ -69,7 +69,7 @@ namespace FileIO_L5
                 Console.WriteLine(e.Message);
             }
 
-            Console.ReadLine();
+          //  Console.ReadLine();
 
             DataModel m = new DataModel();
             var ComputerProgrammer = new CollegeProgram("Computer Programmer", CollegeProgram.CollegeCredentials.Diploma, 3);
@@ -98,7 +98,7 @@ namespace FileIO_L5
 
             byte[] serializedData = DataModel.serialize<DataModel>(m);
             File.WriteAllBytes("Output.dat", serializedData);
-            Console.ReadLine();
+           // Console.ReadLine();
 
             //XmlSerializer xml = new XmlSerializer(typeof(DataModel));
             //MemoryStream memStream = new MemoryStream();
@@ -107,10 +107,10 @@ namespace FileIO_L5
             //memStream.Seek(0, SeekOrigin.Begin);
             //String xmlOut = memStream.ToString();
 
-            XDocument doc = new System.Xml.Linq.XDocument(
+            XDocument doc = new XDocument(
                 new XElement("SIS"));
-            
 
+            doc.Save("Output.xml");
         }
     }
 }

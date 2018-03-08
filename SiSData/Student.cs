@@ -28,11 +28,18 @@ namespace SiS
 
         public XElement createXMLTree()
         {
+            XElement[] AddressXml = new XElement[Addresses.Count];
+            for(int i =0; i<AddressXml.Length;i++)
+            {
+                AddressXml[i] = Addresses[i].createXMLTree();
+            }
+
             XElement xml = new XElement("Student",
                 new XElement("FirstName", FirstName),
                 new XElement("LastName", LastName),
                 new XElement("DateOfBirth", DateOfBirth.ToShortDateString()),
-                new XElement("ID", ID.ID)
+                new XElement("ID", ID.ID),
+                AddressXml
                 );
             return xml;
         }

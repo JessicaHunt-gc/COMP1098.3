@@ -98,7 +98,7 @@ namespace FileIO_L5
 
             byte[] serializedData = DataModel.serialize<DataModel>(m);
             File.WriteAllBytes("Output.dat", serializedData);
-           // Console.ReadLine();
+            // Console.ReadLine();
 
             //XmlSerializer xml = new XmlSerializer(typeof(DataModel));
             //MemoryStream memStream = new MemoryStream();
@@ -106,6 +106,10 @@ namespace FileIO_L5
             //xml.Serialize(memStream, m);
             //memStream.Seek(0, SeekOrigin.Begin);
             //String xmlOut = memStream.ToString();
+
+            s2.Addresses.Add(new Address("1line1", "Line2", "Toronto", "Ontario", "Canada", AddressTypes.Home, s2));
+            s2.Addresses.Add(new Address("2line1", "Line2", "Toronto", "Ontario", "Canada", AddressTypes.Home, s2));
+            s2.Addresses.Add(new Address("3line1", "Line2", "Toronto", "Ontario", "Canada", AddressTypes.Home, s2));
 
             XDocument doc = new XDocument(
                 new XElement("SIS",s2.createXMLTree()));

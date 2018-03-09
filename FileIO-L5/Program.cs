@@ -134,8 +134,8 @@ namespace FileIO_L5
             String Json = JsonConvert.SerializeObject(dataModelTest, Newtonsoft.Json.Formatting.Indented, 
                 new JsonSerializerSettings
             {
-                ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
-                PreserveReferencesHandling = PreserveReferencesHandling.All
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                PreserveReferencesHandling = PreserveReferencesHandling.None
             });
             Console.WriteLine(Json);
 
@@ -184,10 +184,20 @@ namespace FileIO_L5
             l.Books.Add(b2);
             l.Books.Add(b3);
 
+
+
+
             Json = JsonConvert.SerializeObject(l);
 
             Library deserializedLib = JsonConvert.DeserializeObject<Library>(Json);
 
+            XmlSerializer xml = new XmlSerializer(typeof(Library));
+            MemoryStream memstream = new MemoryStream();
+
+            xml.Serialize(memstream, l);
+            memstream.Seek(0, SeekOrigin.Begin);
+            StreamReader sread = new StreamReader(memstream);
+            String xmlGen = sread.ReadToEnd();
 
         }
     }
